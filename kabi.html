@@ -1,0 +1,4364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Emmanuel Kabinaga — Aquatic Specialist, Environmental & Biodiversity Expert, Data Analyst, GIS, Fleet Tracking and Geofence Monitoring Specialist.">
+
+    <title>Emmanuel Kabinaga | Professional Portfolio</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- LUCIDE -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <style>
+
+        /* ==========================================================
+           DESIGN SYSTEM
+        ========================================================== */
+
+        :root {
+
+            --navy: #0B2545;
+            --deep-navy: #06182D;
+            --teal: #134074;
+            --mint: #8DA9C4;
+            --blue: #247BA0;
+
+            --background: #EEF4F8;
+            --white: #FFFFFF;
+
+            --text: #011627;
+            --muted: #60758A;
+
+            --border: #D6E2EA;
+
+            --green: #16836B;
+
+            --radius: 10px;
+            --radius-lg: 20px;
+
+            --shadow:
+                0 15px 50px rgba(11, 37, 69, .09);
+
+            --max-width: 1200px;
+        }
+
+
+        /* ==========================================================
+           RESET
+        ========================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: "Inter", sans-serif;
+
+            background: var(--background);
+
+            color: var(--text);
+
+            line-height: 1.65;
+
+            overflow-x: hidden;
+
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .logo {
+
+            font-family: "Space Grotesk", sans-serif;
+
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        button,
+        input,
+        textarea {
+
+            font-family: inherit;
+
+        }
+
+
+        .container {
+
+            width: min(92%, var(--max-width));
+
+            margin: auto;
+
+        }
+
+
+        /* ==========================================================
+           NAVIGATION
+        ========================================================== */
+
+        .navbar {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            height: 76px;
+
+            z-index: 9999;
+
+            background: rgba(255,255,255,.94);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .nav-inner {
+
+            height: 76px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 11px;
+
+            font-size: 1rem;
+
+            font-weight: 700;
+
+            white-space: nowrap;
+
+        }
+
+
+        .logo-mark {
+
+            width: 38px;
+            height: 38px;
+
+            background: var(--navy);
+
+            color: white;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 9px;
+
+        }
+
+
+        .logo span {
+
+            color: var(--teal);
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            list-style: none;
+
+        }
+
+
+        .nav-links button {
+
+            border: none;
+
+            background: transparent;
+
+            color: #60758A;
+
+            font-size: .74rem;
+
+            font-weight: 700;
+
+            padding: 10px 12px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            transition: .25s ease;
+
+        }
+
+
+        .nav-links button:hover {
+
+            color: var(--navy);
+
+            background: #EEF4F8;
+
+        }
+
+
+        .nav-links button.active {
+
+            color: white;
+
+            background: var(--navy);
+
+        }
+
+
+        .menu-toggle {
+
+            display: none;
+
+            border: none;
+
+            background: transparent;
+
+            cursor: pointer;
+
+            color: var(--navy);
+
+        }
+
+
+
+        /* ==========================================================
+           PAGE SYSTEM
+        ========================================================== */
+
+        /*
+           IMPORTANT:
+
+           Every major page section starts hidden.
+
+           JavaScript adds .visible to the section selected
+           from the navigation.
+        */
+
+        .page-section {
+
+            display: none;
+
+            min-height: calc(100vh - 76px);
+
+            padding-top: 76px;
+
+        }
+
+
+        .page-section.visible {
+
+            display: block;
+
+            animation: sectionIn .45s ease;
+
+        }
+
+
+        @keyframes sectionIn {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(15px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+        .section-inner {
+
+            padding: 90px 0;
+
+        }
+
+
+        .section-header {
+
+            max-width: 760px;
+
+            margin-bottom: 50px;
+
+        }
+
+
+        .eyebrow {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: var(--teal);
+
+            font-size: .7rem;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: .16em;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .eyebrow::before {
+
+            content: "";
+
+            width: 28px;
+
+            height: 2px;
+
+            background: var(--blue);
+
+        }
+
+
+        .section-title {
+
+            font-size: clamp(2.1rem, 5vw, 3.7rem);
+
+            line-height: 1.05;
+
+            letter-spacing: -.055em;
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .section-description {
+
+            color: var(--muted);
+
+            font-size: .95rem;
+
+            max-width: 680px;
+
+        }
+
+
+
+        /* ==========================================================
+           HERO
+        ========================================================== */
+
+        #home {
+
+            background:
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(36,123,160,.10),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #F9FBFD,
+                    #EEF4F8
+                );
+
+        }
+
+
+        .hero-wrapper {
+
+            min-height: calc(100vh - 76px);
+
+            display: grid;
+
+            grid-template-columns: 1.25fr .75fr;
+
+            align-items: center;
+
+            gap: 70px;
+
+        }
+
+
+        .hero-label {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            padding: 7px 12px;
+
+            border-radius: 50px;
+
+            color: var(--teal);
+
+            font-size: .68rem;
+
+            font-weight: 800;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .status {
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #20A36B;
+
+            box-shadow:
+                0 0 0 4px rgba(32,163,107,.12);
+
+        }
+
+
+        .hero-title {
+
+            font-size: clamp(3rem, 6vw, 5.8rem);
+
+            line-height: .97;
+
+            letter-spacing: -.07em;
+
+            margin-bottom: 27px;
+
+        }
+
+
+        .hero-title span {
+
+            color: var(--teal);
+
+        }
+
+
+        .hero-description {
+
+            color: var(--muted);
+
+            font-size: 1rem;
+
+            max-width: 720px;
+
+            margin-bottom: 32px;
+
+        }
+
+
+        .buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding: 13px 18px;
+
+            border-radius: 7px;
+
+            border: 1px solid transparent;
+
+            font-size: .75rem;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .25s ease;
+
+        }
+
+
+        .btn-primary {
+
+            background: var(--navy);
+
+            color: white;
+
+        }
+
+
+        .btn-primary:hover {
+
+            background: var(--teal);
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .btn-secondary {
+
+            background: white;
+
+            color: var(--navy);
+
+            border-color: var(--border);
+
+        }
+
+
+        .btn-secondary:hover {
+
+            border-color: var(--teal);
+
+            transform: translateY(-2px);
+
+        }
+
+
+
+        /* HERO PANEL */
+
+        .profile-panel {
+
+            background: var(--navy);
+
+            color: white;
+
+            padding: 30px;
+
+            border-radius: var(--radius-lg);
+
+            box-shadow: var(--shadow);
+
+        }
+
+
+        .panel-title {
+
+            font-size: .67rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: .15em;
+
+            color: #9FB5C7;
+
+            margin-bottom: 22px;
+
+            font-weight: 800;
+
+        }
+
+
+        .metrics {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            border-left: 1px solid rgba(255,255,255,.14);
+
+            border-top: 1px solid rgba(255,255,255,.14);
+
+        }
+
+
+        .metric {
+
+            padding: 20px 15px;
+
+            border-right: 1px solid rgba(255,255,255,.14);
+
+            border-bottom: 1px solid rgba(255,255,255,.14);
+
+        }
+
+
+        .metric strong {
+
+            display: block;
+
+            font-family: "Space Grotesk";
+
+            font-size: 1.7rem;
+
+        }
+
+
+        .metric small {
+
+            color: #9FB5C7;
+
+            font-size: .63rem;
+
+            line-height: 1.4;
+
+        }
+
+
+        .tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin-top: 22px;
+
+        }
+
+
+        .tag {
+
+            font-size: .61rem;
+
+            padding: 5px 8px;
+
+            border: 1px solid rgba(255,255,255,.14);
+
+            color: #D1DCE4;
+
+            border-radius: 4px;
+
+        }
+
+
+
+        /* ==========================================================
+           EXPERTISE
+        ========================================================== */
+
+        #expertise {
+
+            background: white;
+
+        }
+
+
+        .expertise-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            border-left: 1px solid var(--border);
+
+            border-top: 1px solid var(--border);
+
+        }
+
+
+        .expertise-card {
+
+            padding: 35px;
+
+            min-height: 350px;
+
+            border-right: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+
+            transition: .25s ease;
+
+        }
+
+
+        .expertise-card:hover {
+
+            background: #F8FBFD;
+
+            box-shadow: inset 0 0 0 1px var(--teal);
+
+        }
+
+
+        .icon-box {
+
+            width: 46px;
+            height: 46px;
+
+            display: grid;
+
+            place-items: center;
+
+            color: var(--teal);
+
+            background: #E8F0F5;
+
+            border-radius: 9px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .expertise-card h3 {
+
+            font-size: 1.25rem;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .expertise-card p {
+
+            color: var(--muted);
+
+            font-size: .79rem;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .skill-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            list-style: none;
+
+        }
+
+
+        .skill-list li {
+
+            background: #F0F5F8;
+
+            color: var(--teal);
+
+            padding: 5px 8px;
+
+            border-radius: 4px;
+
+            font-size: .62rem;
+
+            font-weight: 800;
+
+        }
+
+
+
+        /* ==========================================================
+           DATA
+        ========================================================== */
+
+        #data {
+
+            background: var(--deep-navy);
+
+            color: white;
+
+        }
+
+
+        .data-layout {
+
+            min-height: calc(100vh - 76px);
+
+            display: grid;
+
+            grid-template-columns: .8fr 1.2fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+        }
+
+
+        #data .section-title {
+
+            color: white;
+
+        }
+
+
+        #data .section-description {
+
+            color: #AFC0CE;
+
+        }
+
+
+        #data .eyebrow {
+
+            color: #8DA9C4;
+
+        }
+
+
+        .tools-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            border-left: 1px solid rgba(255,255,255,.13);
+
+            border-top: 1px solid rgba(255,255,255,.13);
+
+        }
+
+
+        .tool {
+
+            display: flex;
+
+            gap: 14px;
+
+            align-items: center;
+
+            padding: 25px;
+
+            border-right: 1px solid rgba(255,255,255,.13);
+
+            border-bottom: 1px solid rgba(255,255,255,.13);
+
+        }
+
+
+        .tool i {
+
+            color: var(--mint);
+
+        }
+
+
+        .tool strong {
+
+            display: block;
+
+            font-family: "Space Grotesk";
+
+            font-size: .9rem;
+
+        }
+
+
+        .tool small {
+
+            color: #899FAF;
+
+            font-size: .62rem;
+
+        }
+
+
+
+        /* ==========================================================
+           PROJECTS
+        ========================================================== */
+
+        #projects {
+
+            background: var(--background);
+
+        }
+
+
+        .project {
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            margin-bottom: 22px;
+
+            box-shadow: 0 5px 20px rgba(11,37,69,.04);
+
+        }
+
+
+        .project-header {
+
+            display: grid;
+
+            grid-template-columns: 65px 1fr auto;
+
+            gap: 20px;
+
+            align-items: center;
+
+            padding: 25px 30px;
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .project-number {
+
+            font-family: "Space Grotesk";
+
+            font-size: 1.4rem;
+
+            color: var(--mint);
+
+            font-weight: 700;
+
+        }
+
+
+        .project-title {
+
+            font-size: 1.1rem;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .project-subtitle {
+
+            font-size: .67rem;
+
+            color: var(--muted);
+
+        }
+
+
+        .badge {
+
+            background: #EAF1F6;
+
+            color: var(--teal);
+
+            padding: 6px 9px;
+
+            border-radius: 4px;
+
+            font-size: .6rem;
+
+            font-weight: 800;
+
+        }
+
+
+        .project-body {
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+        }
+
+
+        .project-step {
+
+            padding: 28px;
+
+            border-right: 1px solid var(--border);
+
+        }
+
+
+        .project-step:last-child {
+
+            border-right: none;
+
+        }
+
+
+        .step-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: var(--teal);
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+
+            font-size: .61rem;
+
+            font-weight: 800;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .project-step p {
+
+            color: var(--muted);
+
+            font-size: .74rem;
+
+        }
+
+
+        .project-tools {
+
+            border-top: 1px solid var(--border);
+
+            background: #F8FAFC;
+
+            padding: 15px 28px;
+
+            color: var(--muted);
+
+            font-size: .65rem;
+
+        }
+
+
+        .project-tools strong {
+
+            color: var(--text);
+
+        }
+
+
+
+        /* ==========================================================
+           EDUCATION
+        ========================================================== */
+
+        #education {
+
+            background: var(--background);
+
+        }
+
+
+        .timeline-layout {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+        }
+
+
+        .timeline {
+
+            border-left: 1px solid #C8D6DF;
+
+            padding-left: 30px;
+
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            padding: 0 0 35px 25px;
+
+        }
+
+
+        .timeline-item:last-child {
+
+            padding-bottom: 0;
+
+        }
+
+
+        .timeline-dot {
+
+            position: absolute;
+
+            width: 10px;
+
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: var(--teal);
+
+            left: -36px;
+
+            top: 7px;
+
+            box-shadow: 0 0 0 5px var(--background);
+
+        }
+
+
+        .timeline-date {
+
+            color: var(--teal);
+
+            font-family: "Space Grotesk";
+
+            font-size: .65rem;
+
+            font-weight: 800;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .timeline-item h3 {
+
+            font-size: 1rem;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .timeline-item h4 {
+
+            color: var(--muted);
+
+            font-size: .72rem;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .timeline-item p {
+
+            color: var(--muted);
+
+            font-size: .72rem;
+
+        }
+
+
+        .resume-box {
+
+            margin-top: 30px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+        }
+
+
+        .resume-box span {
+
+            color: var(--muted);
+
+            font-size: .7rem;
+
+        }
+
+
+
+        /* ==========================================================
+           EXPERIENCE
+        ========================================================== */
+
+        #experience {
+
+            background: white;
+
+        }
+
+
+        .experience-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+
+        }
+
+
+        .experience-card {
+
+            border: 1px solid var(--border);
+
+            background: #FBFCFD;
+
+            padding: 30px;
+
+        }
+
+
+        .experience-card .date {
+
+            color: var(--teal);
+
+            font-size: .62rem;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .experience-card h3 {
+
+            font-size: 1.15rem;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .company {
+
+            color: var(--muted);
+
+            font-size: .72rem;
+
+            font-weight: 600;
+
+            margin-bottom: 16px;
+
+        }
+
+
+        .experience-card p {
+
+            color: var(--muted);
+
+            font-size: .75rem;
+
+        }
+
+
+        .experience-skills {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin-top: 18px;
+
+        }
+
+
+        .experience-skills span {
+
+            background: #E8F0F5;
+
+            color: var(--teal);
+
+            padding: 5px 7px;
+
+            font-size: .59rem;
+
+            font-weight: 800;
+
+            border-radius: 4px;
+
+        }
+
+
+
+        /* ==========================================================
+           ENVIRONMENT
+        ========================================================== */
+
+        #environment {
+
+            background: white;
+
+        }
+
+
+        .environment-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+
+        }
+
+
+        .environment-card {
+
+            padding: 35px;
+
+            border: 1px solid var(--border);
+
+            background: #FBFCFD;
+
+        }
+
+
+        .environment-card h3 {
+
+            font-size: 1.2rem;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .environment-card p {
+
+            color: var(--muted);
+
+            font-size: .76rem;
+
+        }
+
+
+        .environment-list {
+
+            list-style: none;
+
+            margin-top: 18px;
+
+        }
+
+
+        .environment-list li {
+
+            display: flex;
+
+            gap: 8px;
+
+            align-items: center;
+
+            padding: 8px 0;
+
+            border-bottom: 1px dashed var(--border);
+
+            color: #536A7D;
+
+            font-size: .7rem;
+
+        }
+
+
+        .environment-list i {
+
+            color: var(--green);
+
+        }
+
+
+
+        /* ==========================================================
+           CAREER SCOPE
+        ========================================================== */
+
+        #roles {
+
+            background: var(--navy);
+
+            color: white;
+
+        }
+
+
+        #roles .section-title {
+
+            color: white;
+
+        }
+
+
+        #roles .section-description {
+
+            color: #AFC0CE;
+
+        }
+
+
+        #roles .eyebrow {
+
+            color: #8DA9C4;
+
+        }
+
+
+        .roles-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            border-left: 1px solid rgba(255,255,255,.14);
+
+            border-top: 1px solid rgba(255,255,255,.14);
+
+        }
+
+
+        .role {
+
+            padding: 25px;
+
+            border-right: 1px solid rgba(255,255,255,.14);
+
+            border-bottom: 1px solid rgba(255,255,255,.14);
+
+            transition: .25s ease;
+
+        }
+
+
+        .role:hover {
+
+            background: rgba(255,255,255,.04);
+
+        }
+
+
+        .role i {
+
+            color: var(--mint);
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .role h3 {
+
+            font-size: .88rem;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .role p {
+
+            color: #91A7B6;
+
+            font-size: .66rem;
+
+        }
+
+
+
+        /* ==========================================================
+           CONTACT
+        ========================================================== */
+
+        #contact {
+
+            background: white;
+
+        }
+
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns: .8fr 1.2fr;
+
+            gap: 60px;
+
+        }
+
+
+        .contact-links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+        }
+
+
+        .contact-link {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            padding: 15px;
+
+            border: 1px solid var(--border);
+
+            background: #FBFCFD;
+
+            transition: .2s ease;
+
+        }
+
+
+        .contact-link:hover {
+
+            border-color: var(--teal);
+
+            transform: translateX(3px);
+
+        }
+
+
+        .contact-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: grid;
+
+            place-items: center;
+
+            background: #E8F0F5;
+
+            color: var(--teal);
+
+            border-radius: 7px;
+
+        }
+
+
+        .contact-link small {
+
+            display: block;
+
+            color: var(--muted);
+
+            font-size: .57rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: .1em;
+
+        }
+
+
+        .contact-link strong {
+
+            font-size: .73rem;
+
+        }
+
+
+        .feedback {
+
+            background: var(--background);
+
+            border: 1px solid var(--border);
+
+            padding: 32px;
+
+        }
+
+
+        .feedback h3 {
+
+            font-size: 1.2rem;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .feedback > p {
+
+            color: var(--muted);
+
+            font-size: .7rem;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            color: #536A7D;
+
+            font-size: .6rem;
+
+            font-weight: 800;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .form-group input,
+        .form-group textarea {
+
+            width: 100%;
+
+            border: 1px solid var(--border);
+
+            background: white;
+
+            padding: 11px;
+
+            border-radius: 6px;
+
+            outline: none;
+
+            font-size: .72rem;
+
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+
+            border-color: var(--teal);
+
+        }
+
+
+        .form-group textarea {
+
+            min-height: 110px;
+
+            resize: vertical;
+
+        }
+
+
+
+        /* ==========================================================
+           FOOTER
+        ========================================================== */
+
+        .footer {
+
+            background: var(--deep-navy);
+
+            color: white;
+
+            padding: 30px 0;
+
+        }
+
+
+        .footer-inner {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+
+        .footer-copy {
+
+            color: #8096A8;
+
+            font-size: .63rem;
+
+        }
+
+
+        .socials {
+
+            display: flex;
+
+            gap: 7px;
+
+        }
+
+
+        .social {
+
+            width: 34px;
+            height: 34px;
+
+            display: grid;
+
+            place-items: center;
+
+            border: 1px solid rgba(255,255,255,.15);
+
+            color: #AFC0CC;
+
+            border-radius: 6px;
+
+        }
+
+
+        .social:hover {
+
+            background: var(--teal);
+
+            color: white;
+
+        }
+
+
+
+        /* ==========================================================
+           BACK TO TOP BUTTON
+        ========================================================== */
+
+        #backToTop {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            width: 48px;
+            height: 48px;
+
+            border: none;
+
+            background: var(--navy);
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: grid;
+
+            place-items: center;
+
+            cursor: pointer;
+
+            z-index: 9000;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.18);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(15px);
+
+            transition: .3s ease;
+
+        }
+
+
+        #backToTop.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+
+        }
+
+
+        #backToTop:hover {
+
+            background: var(--teal);
+
+            transform: translateY(-4px);
+
+        }
+
+
+
+        /* ==========================================================
+           RESPONSIVE
+        ========================================================== */
+
+        @media(max-width: 950px) {
+
+            .nav-links {
+
+                position: fixed;
+
+                top: 76px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                border-bottom: 1px solid var(--border);
+
+                padding: 20px 5%;
+
+                display: none;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+            }
+
+
+            .nav-links.open {
+
+                display: flex;
+
+            }
+
+
+            .nav-links button {
+
+                width: 100%;
+
+                text-align: left;
+
+            }
+
+
+            .menu-toggle {
+
+                display: block;
+
+            }
+
+
+            .hero-wrapper,
+            .data-layout,
+            .timeline-layout,
+            .contact-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .hero-wrapper {
+
+                padding: 80px 0;
+
+            }
+
+
+            .expertise-grid,
+            .roles-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+        }
+
+
+
+        @media(max-width: 680px) {
+
+            .section-inner {
+
+                padding: 70px 0;
+
+            }
+
+
+            .hero-title {
+
+                font-size: clamp(2.7rem, 14vw, 4rem);
+
+            }
+
+
+            .expertise-grid,
+            .roles-grid,
+            .environment-grid,
+            .experience-grid,
+            .project-body {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .tools-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .project-header {
+
+                grid-template-columns: 45px 1fr;
+
+            }
+
+
+            .badge {
+
+                grid-column: 2;
+
+                width: fit-content;
+
+            }
+
+
+            .project-step {
+
+                border-right: none;
+
+                border-bottom: 1px solid var(--border);
+
+            }
+
+
+            .project-step:last-child {
+
+                border-bottom: none;
+
+            }
+
+
+            .buttons {
+
+                flex-direction: column;
+
+            }
+
+
+            .btn {
+
+                width: 100%;
+
+            }
+
+
+            .footer-inner {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+            }
+
+
+            .resume-box {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+            }
+
+
+            #backToTop {
+
+                right: 17px;
+
+                bottom: 17px;
+
+                width: 44px;
+
+                height: 44px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+
+<header class="navbar">
+
+    <div class="container nav-inner">
+
+
+        <!-- LOGO -->
+
+        <a href="#"
+           class="logo"
+           onclick="showSection('home'); return false;">
+
+            <div class="logo-mark">
+
+                <i data-lucide="waves"
+                   size="19"></i>
+
+            </div>
+
+            Emmanuel <span>Kabinaga</span>
+
+        </a>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav>
+
+            <ul class="nav-links"
+                id="navLinks">
+
+
+                <li>
+
+                    <button
+                        data-section="home"
+                        class="active">
+
+                        Home
+
+                    </button>
+
+                </li>
+
+
+                <li>
+
+                    <button
+                        data-section="expertise">
+
+                        Expertise
+
+                    </button>
+
+                </li>
+
+
+                <li>
+
+                    <button
+                        data-section="data">
+
+                        Data & Tech
+
+                    </button>
+
+                </li>
+
+
+                <li>
+
+                    <button
+                        data-section="projects">
+
+                        Projects
+
+                    </button>
+
+                </li>
+
+
+                <li>
+
+                    <button
+                        data-section="education">
+
+                        Education
+
+                    </button>
+
+                </li>
+
+
+                <li>
+
+                    <button
+                        data-section="experience">
+
+                        Experience
+
+                    </button>
+
+                </li>
+
+
+                <li>
+
+                    <button
+                        data-section="environment">
+
+                        Environment
+
+                    </button>
+
+                </li>
+
+
+                <li>
+
+                    <button
+                        data-section="roles">
+
+                        Career Scope
+
+                    </button>
+
+                </li>
+
+
+                <li>
+
+                    <button
+                        data-section="contact">
+
+                        Contact
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+
+        <!-- MOBILE BUTTON -->
+
+        <button class="menu-toggle"
+                id="menuToggle">
+
+            <i data-lucide="menu"></i>
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- ============================================================
+     HOME
+============================================================ -->
+
+<section id="home"
+         class="page-section visible">
+
+    <div class="container hero-wrapper">
+
+
+        <div>
+
+            <div class="hero-label">
+
+                <span class="status"></span>
+
+                AQUATIC • ENVIRONMENTAL • DATA • FLEET INTELLIGENCE
+
+            </div>
+
+
+            <h1 class="hero-title">
+
+                Aquatic Specialist.
+                <span>Data Analyst.</span>
+                Environmental Intelligence.
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                I combine aquatic science, environmental monitoring,
+                biodiversity knowledge and advanced data analysis to
+                turn complex field and operational data into clear,
+                actionable intelligence.
+
+                My technical expertise also covers Power BI, SQL,
+                Excel, QGIS, GPS tracking, Wialon, geofencing and
+                fleet management systems.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <button class="btn btn-primary"
+                        onclick="showSection('projects')">
+
+                    Explore Projects
+
+                    <i data-lucide="arrow-right"
+                       size="15"></i>
+
+                </button>
+
+
+                <button class="btn btn-secondary"
+                        onclick="showSection('contact')">
+
+                    Contact Me
+
+                    <i data-lucide="mail"
+                       size="15"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PROFILE PANEL -->
+
+        <div class="profile-panel">
+
+            <div class="panel-title">
+
+                Professional Profile
+
+            </div>
+
+
+            <div class="metrics">
+
+                <div class="metric">
+
+                    <strong>400+</strong>
+
+                    <small>
+                        Vehicles & heavy machines monitored
+                    </small>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <strong>4+</strong>
+
+                    <small>
+                        Professional experience areas
+                    </small>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <strong>10+</strong>
+
+                    <small>
+                        Technical capabilities
+                    </small>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <strong>360°</strong>
+
+                    <small>
+                        Science + data + operations
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="tags">
+
+                <span class="tag">Power BI</span>
+
+                <span class="tag">SQL</span>
+
+                <span class="tag">Excel</span>
+
+                <span class="tag">QGIS</span>
+
+                <span class="tag">Wialon</span>
+
+                <span class="tag">GPS</span>
+
+                <span class="tag">Geofencing</span>
+
+                <span class="tag">Aquaculture</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     EXPERTISE
+============================================================ -->
+
+<section id="expertise"
+         class="page-section">
+
+    <div class="container section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Core Expertise
+            </div>
+
+            <h2 class="section-title">
+                Science, data and operational intelligence.
+            </h2>
+
+            <p class="section-description">
+                A multidisciplinary technical profile connecting
+                aquatic science, environmental management,
+                geospatial analytics and modern data systems.
+            </p>
+
+        </div>
+
+
+        <div class="expertise-grid">
+
+
+            <article class="expertise-card">
+
+                <div class="icon-box">
+
+                    <i data-lucide="map"></i>
+
+                </div>
+
+                <h3>
+                    Spatial & Data Analytics
+                </h3>
+
+                <p>
+                    Transforming spatial, environmental and operational
+                    datasets into maps, dashboards and decision-support
+                    information.
+                </p>
+
+                <ul class="skill-list">
+
+                    <li>QGIS</li>
+                    <li>Power BI</li>
+                    <li>SQL</li>
+                    <li>Excel</li>
+                    <li>GPS Data</li>
+                    <li>Spatial Analysis</li>
+
+                </ul>
+
+            </article>
+
+
+
+            <article class="expertise-card">
+
+                <div class="icon-box">
+
+                    <i data-lucide="leaf"></i>
+
+                </div>
+
+                <h3>
+                    Environment & Biodiversity
+                </h3>
+
+                <p>
+                    Environmental monitoring, ecosystem observations,
+                    biodiversity assessment and environmental data
+                    interpretation.
+                </p>
+
+                <ul class="skill-list">
+
+                    <li>Biodiversity</li>
+                    <li>Water Quality</li>
+                    <li>Environmental Monitoring</li>
+                    <li>Ecosystems</li>
+                    <li>GIS</li>
+                    <li>Field Research</li>
+
+                </ul>
+
+            </article>
+
+
+
+            <article class="expertise-card">
+
+                <div class="icon-box">
+
+                    <i data-lucide="fish"></i>
+
+                </div>
+
+                <h3>
+                    Aquatic Science
+                </h3>
+
+                <p>
+                    Practical knowledge of aquaculture production,
+                    fish nutrition, water quality and African catfish
+                    production.
+                </p>
+
+                <ul class="skill-list">
+
+                    <li>Aquaculture</li>
+                    <li>Fish Nutrition</li>
+                    <li>Water Quality</li>
+                    <li>Catfish Production</li>
+                    <li>Feed Production</li>
+                    <li>Research</li>
+
+                </ul>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     DATA & TECHNOLOGY
+============================================================ -->
+
+<section id="data"
+         class="page-section">
+
+    <div class="container data-layout">
+
+
+        <div>
+
+            <div class="eyebrow">
+                Data Intelligence
+            </div>
+
+            <h2 class="section-title">
+                Turning raw data into decisions.
+            </h2>
+
+            <p class="section-description">
+                I analyse, structure, visualize and present data
+                from environmental, aquatic and fleet operations.
+            </p>
+
+        </div>
+
+
+        <div class="tools-grid">
+
+
+            <div class="tool">
+
+                <i data-lucide="bar-chart-3"></i>
+
+                <div>
+
+                    <strong>Power BI</strong>
+
+                    <small>
+                        Dashboards & reporting
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="tool">
+
+                <i data-lucide="database"></i>
+
+                <div>
+
+                    <strong>SQL</strong>
+
+                    <small>
+                        Querying & data analysis
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="tool">
+
+                <i data-lucide="table-2"></i>
+
+                <div>
+
+                    <strong>Microsoft Excel</strong>
+
+                    <small>
+                        Cleaning & analytical models
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="tool">
+
+                <i data-lucide="map"></i>
+
+                <div>
+
+                    <strong>QGIS</strong>
+
+                    <small>
+                        GIS & spatial analysis
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="tool">
+
+                <i data-lucide="radio"></i>
+
+                <div>
+
+                    <strong>GPS Tracking</strong>
+
+                    <small>
+                        Real-time asset monitoring
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="tool">
+
+                <i data-lucide="navigation"></i>
+
+                <div>
+
+                    <strong>Wialon</strong>
+
+                    <small>
+                        Fleet & geofence monitoring
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     PROJECTS
+============================================================ -->
+
+<section id="projects"
+         class="page-section">
+
+    <div class="container section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Featured Projects
+            </div>
+
+            <h2 class="section-title">
+                Problem → Methodology → Results.
+            </h2>
+
+            <p class="section-description">
+                Selected academic and practical applications
+                connecting UDOM coursework with GIS, aquatic science,
+                environmental monitoring and fleet analytics.
+            </p>
+
+        </div>
+
+
+        <!-- PROJECT 1 -->
+
+        <article class="project">
+
+            <div class="project-header">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3 class="project-title">
+                        Aquatic Resource & Spatial Assessment
+                    </h3>
+
+                    <p class="project-subtitle">
+                        UDOM Aquaculture & Aquatic Science → QGIS
+                    </p>
+
+                </div>
+
+                <span class="badge">
+                    GIS / ENVIRONMENT
+                </span>
+
+            </div>
+
+
+            <div class="project-body">
+
+                <div class="project-step">
+
+                    <div class="step-title">
+
+                        <i data-lucide="triangle-alert"
+                           size="14"></i>
+
+                        Problem
+
+                    </div>
+
+                    <p>
+                        Aquatic resources and environmental conditions
+                        are strongly influenced by location and
+                        surrounding land use.
+                    </p>
+
+                </div>
+
+
+                <div class="project-step">
+
+                    <div class="step-title">
+
+                        <i data-lucide="settings-2"
+                           size="14"></i>
+
+                        Methodology
+
+                    </div>
+
+                    <p>
+                        Applied GIS data preparation, layer management,
+                        coordinate systems, thematic mapping and
+                        spatial interpretation using QGIS.
+                    </p>
+
+                </div>
+
+
+                <div class="project-step">
+
+                    <div class="step-title">
+
+                        <i data-lucide="check-circle"
+                           size="14"></i>
+
+                        Results
+
+                    </div>
+
+                    <p>
+                        Produced structured spatial information to
+                        support environmental assessment, planning
+                        and resource management.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-tools">
+
+                <strong>Tools:</strong>
+
+                QGIS • GIS Layers • Spatial Data • Environmental Mapping
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 2 -->
+
+        <article class="project">
+
+            <div class="project-header">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3 class="project-title">
+                        Water Quality & Aquaculture Monitoring
+                    </h3>
+
+                    <p class="project-subtitle">
+                        Aquaculture Field Practice → Data Analysis
+                    </p>
+
+                </div>
+
+                <span class="badge">
+                    AQUACULTURE
+                </span>
+
+            </div>
+
+
+            <div class="project-body">
+
+                <div class="project-step">
+
+                    <div class="step-title">
+
+                        <i data-lucide="triangle-alert"
+                           size="14"></i>
+
+                        Problem
+
+                    </div>
+
+                    <p>
+                        Changes in water conditions can affect fish
+                        health, growth, feeding performance and survival.
+                    </p>
+
+                </div>
+
+
+                <div class="project-step">
+
+                    <div class="step-title">
+
+                        <i data-lucide="settings-2"
+                           size="14"></i>
+
+                        Methodology
+
+                    </div>
+
+                    <p>
+                        Conducted water quality measurements including
+                        Total Dissolved Solids, ammonia, nitrogen and
+                        other relevant parameters.
+                    </p>
+
+                </div>
+
+
+                <div class="project-step">
+
+                    <div class="step-title">
+
+                        <i data-lucide="check-circle"
+                           size="14"></i>
+
+                        Results
+
+                    </div>
+
+                    <p>
+                        Generated monitoring information supporting
+                        better aquaculture management and identification
+                        of changing water conditions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-tools">
+
+                <strong>Knowledge:</strong>
+
+                Water Quality • Excel • Data Analysis • Aquaculture
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PROJECT 3 -->
+
+        <article class="project">
+
+            <div class="project-header">
+
+                <div class="project-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3 class="project-title">
+                        Fleet Tracking & Geofence Monitoring
+                    </h3>
+
+                    <p class="project-subtitle">
+                        Utrack Africa → Yapi Merkezi, Tabora
+                    </p>
+
+                </div>
+
+                <span class="badge">
+                    FLEET INTELLIGENCE
+                </span>
+
+            </div>
+
+
+            <div class="project-body">
+
+                <div class="project-step">
+
+                    <div class="step-title">
+
+                        <i data-lucide="triangle-alert"
+                           size="14"></i>
+
+                        Problem
+
+                    </div>
+
+                    <p>
+                        Large fleets require continuous visibility
+                        of vehicle location, movement and geofence
+                        events.
+                    </p>
+
+                </div>
+
+
+                <div class="project-step">
+
+                    <div class="step-title">
+
+                        <i data-lucide="settings-2"
+                           size="14"></i>
+
+                        Methodology
+
+                    </div>
+
+                    <p>
+                        Monitor GPS-enabled assets using tracking
+                        systems, analyse movement and monitor
+                        geofence events.
+                    </p>
+
+                </div>
+
+
+                <div class="project-step">
+
+                    <div class="step-title">
+
+                        <i data-lucide="check-circle"
+                           size="14"></i>
+
+                        Results
+
+                    </div>
+
+                    <p>
+                        Monitor more than 400 vehicles and heavy
+                        machines while converting tracking data
+                        into operational information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-tools">
+
+                <strong>Technology:</strong>
+
+                Wialon • GPS • Geofencing • Fleet Management • Data Presentation
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     EDUCATION
+============================================================ -->
+
+<section id="education"
+         class="page-section">
+
+    <div class="container section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Education
+            </div>
+
+            <h2 class="section-title">
+                Academic foundation.
+            </h2>
+
+            <p class="section-description">
+                From primary education to a Bachelor of Science
+                in Aquaculture and Aquatic Science.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-layout">
+
+
+            <!-- EDUCATION TIMELINE -->
+
+            <div>
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            2008 — 2014
+                        </div>
+
+                        <h3>
+                            Primary Education
+                        </h3>
+
+                        <h4>
+                            Nyabugera "B" Primary School
+                        </h4>
+
+                        <p>
+                            Completed primary-level education.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            2015 — 2018
+                        </div>
+
+                        <h3>
+                            Secondary Education
+                        </h3>
+
+                        <h4>
+                            Mwatulole Secondary School
+                        </h4>
+
+                        <p>
+                            Completed ordinary secondary education.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            2019 — 2021
+                        </div>
+
+                        <h3>
+                            Advanced Secondary Education
+                        </h3>
+
+                        <h4>
+                            Kilangalanga Secondary School
+                        </h4>
+
+                        <p>
+                            Completed advanced-level secondary education.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            2022 — 2025
+                        </div>
+
+                        <h3>
+                            B.Sc. Aquaculture & Aquatic Science
+                        </h3>
+
+                        <h4>
+                            University of Dodoma — UDOM
+                        </h4>
+
+                        <p>
+                            Studied aquaculture, aquatic ecosystems,
+                            water quality, fish production, environmental
+                            science and research.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="resume-box">
+
+                    <span>
+                        Professional CV / Resume
+                    </span>
+
+                    <a href="resume.pdf"
+                       download
+                       class="btn btn-primary">
+
+                        Download CV
+
+                        <i data-lucide="download"
+                           size="15"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EDUCATION SKILLS -->
+
+            <div>
+
+                <div class="eyebrow">
+                    Technical Foundation
+                </div>
+
+                <h3 style="
+                    font-family:'Space Grotesk';
+                    font-size:1.5rem;
+                    margin-bottom:20px;
+                ">
+
+                    Built around science and practical technology.
+
+                </h3>
+
+
+                <div class="experience-card">
+
+                    <p>
+                        My university training in Aquaculture and Aquatic
+                        Science developed the scientific foundation behind
+                        my environmental and aquatic work.
+                    </p>
+
+
+                    <div class="experience-skills">
+
+                        <span>Aquaculture</span>
+
+                        <span>Aquatic Science</span>
+
+                        <span>Water Quality</span>
+
+                        <span>Fish Production</span>
+
+                        <span>Research</span>
+
+                        <span>Environmental Science</span>
+
+                        <span>Biodiversity</span>
+
+                        <span>GIS</span>
+
+                        <span>Data Analysis</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     EXPERIENCE
+============================================================ -->
+
+<section id="experience"
+         class="page-section">
+
+    <div class="container section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Professional Experience
+            </div>
+
+            <h2 class="section-title">
+                Practical work across science and technology.
+            </h2>
+
+        </div>
+
+
+        <div class="experience-grid">
+
+
+            <!-- TAFIRI -->
+
+            <article class="experience-card">
+
+                <div class="date">
+                    Research Experience
+                </div>
+
+                <h3>
+                    Research Assistant
+                </h3>
+
+                <div class="company">
+                    TAFIRI — Mwanza
+                </div>
+
+                <p>
+                    Supported aquaculture research activities,
+                    field data collection, water quality monitoring,
+                    fish production activities and data analysis.
+                </p>
+
+
+                <div class="experience-skills">
+
+                    <span>Research</span>
+
+                    <span>Data Analysis</span>
+
+                    <span>Water Quality</span>
+
+                    <span>Aquaculture</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- RUVU -->
+
+            <article class="experience-card">
+
+                <div class="date">
+                    Aquaculture
+                </div>
+
+                <h3>
+                    Aquaculture Specialist
+                </h3>
+
+                <div class="company">
+                    Ruvu Fish Farm
+                </div>
+
+                <p>
+                    Worked with aquaculture production, water quality
+                    monitoring, feeding practices and fish production
+                    operations.
+                </p>
+
+
+                <div class="experience-skills">
+
+                    <span>Aquaculture</span>
+
+                    <span>Water Quality</span>
+
+                    <span>Fish Feeding</span>
+
+                    <span>Production</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- EDEN -->
+
+            <article class="experience-card">
+
+                <div class="date">
+                    Aquaculture
+                </div>
+
+                <h3>
+                    Aquaculture Specialist
+                </h3>
+
+                <div class="company">
+                    Eden Agri Aqua
+                </div>
+
+                <p>
+                    Worked on fish production, fish feed production,
+                    water quality monitoring and artificial production
+                    of African catfish.
+                </p>
+
+
+                <div class="experience-skills">
+
+                    <span>Catfish Production</span>
+
+                    <span>Fish Feed</span>
+
+                    <span>Pearson Formula</span>
+
+                    <span>Water Quality</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- UTRACK -->
+
+            <article class="experience-card">
+
+                <div class="date">
+                    Current Role
+                </div>
+
+                <h3>
+                    Tracking Officer & Geofence Monitor
+                </h3>
+
+                <div class="company">
+                    Utrack Africa Co. Ltd — Yapi Merkezi, Tabora
+                </div>
+
+                <p>
+                    Monitor more than 400 vehicles and heavy machines,
+                    conduct GPS tracking, geofence monitoring, fleet
+                    analysis and data presentation.
+                </p>
+
+
+                <div class="experience-skills">
+
+                    <span>Wialon</span>
+
+                    <span>GPS Tracking</span>
+
+                    <span>Geofencing</span>
+
+                    <span>Fleet Management</span>
+
+                    <span>Data Analysis</span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     ENVIRONMENT
+============================================================ -->
+
+<section id="environment"
+         class="page-section">
+
+    <div class="container section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Environment & Biodiversity
+            </div>
+
+            <h2 class="section-title">
+                Environmental intelligence backed by aquatic science.
+            </h2>
+
+            <p class="section-description">
+                My aquatic science background gives me a practical
+                foundation for environmental monitoring, ecosystem
+                assessment and biodiversity-related work.
+            </p>
+
+        </div>
+
+
+        <div class="environment-grid">
+
+
+            <article class="environment-card">
+
+                <div class="icon-box">
+
+                    <i data-lucide="trees"></i>
+
+                </div>
+
+                <h3>
+                    Biodiversity & Ecosystems
+                </h3>
+
+                <p>
+                    Supporting biodiversity monitoring and ecosystem
+                    assessment through field observations, environmental
+                    data and spatial analysis.
+                </p>
+
+
+                <ul class="environment-list">
+
+                    <li>
+
+                        <i data-lucide="check"
+                           size="14"></i>
+
+                        Biodiversity monitoring
+
+                    </li>
+
+
+                    <li>
+
+                        <i data-lucide="check"
+                           size="14"></i>
+
+                        Ecosystem assessment
+
+                    </li>
+
+
+                    <li>
+
+                        <i data-lucide="check"
+                           size="14"></i>
+
+                        Environmental field data
+
+                    </li>
+
+
+                    <li>
+
+                        <i data-lucide="check"
+                           size="14"></i>
+
+                        GIS environmental mapping
+
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+
+            <article class="environment-card">
+
+                <div class="icon-box">
+
+                    <i data-lucide="droplets"></i>
+
+                </div>
+
+                <h3>
+                    Water & Aquatic Environment
+                </h3>
+
+                <p>
+                    Practical experience monitoring aquatic conditions
+                    and analysing parameters relevant to fish production
+                    and aquatic ecosystem health.
+                </p>
+
+
+                <ul class="environment-list">
+
+                    <li>
+
+                        <i data-lucide="check"
+                           size="14"></i>
+
+                        Total Dissolved Solids
+
+                    </li>
+
+
+                    <li>
+
+                        <i data-lucide="check"
+                           size="14"></i>
+
+                        Ammonia monitoring
+
+                    </li>
+
+
+                    <li>
+
+                        <i data-lucide="check"
+                           size="14"></i>
+
+                        Nitrogen monitoring
+
+                    </li>
+
+
+                    <li>
+
+                        <i data-lucide="check"
+                           size="14"></i>
+
+                        Water quality management
+
+                    </li>
+
+                </ul>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     CAREER SCOPE
+============================================================ -->
+
+<section id="roles"
+         class="page-section">
+
+    <div class="container section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Career Scope
+            </div>
+
+            <h2 class="section-title">
+                Roles I can contribute to.
+            </h2>
+
+            <p class="section-description">
+                A multidisciplinary profile suited to environmental,
+                scientific, analytical, geospatial and fleet
+                technology positions.
+            </p>
+
+        </div>
+
+
+        <div class="roles-grid">
+
+
+            <article class="role">
+
+                <i data-lucide="bar-chart-3"></i>
+
+                <h3>
+                    Data Analyst
+                </h3>
+
+                <p>
+                    Power BI, SQL, Excel, data cleaning,
+                    analysis and reporting.
+                </p>
+
+            </article>
+
+
+            <article class="role">
+
+                <i data-lucide="map"></i>
+
+                <h3>
+                    GIS / Spatial Analyst
+                </h3>
+
+                <p>
+                    QGIS, GPS data, mapping and
+                    spatial analysis.
+                </p>
+
+            </article>
+
+
+            <article class="role">
+
+                <i data-lucide="leaf"></i>
+
+                <h3>
+                    Environmental Specialist
+                </h3>
+
+                <p>
+                    Environmental monitoring,
+                    field data and management.
+                </p>
+
+            </article>
+
+
+            <article class="role">
+
+                <i data-lucide="bird"></i>
+
+                <h3>
+                    Biodiversity Specialist
+                </h3>
+
+                <p>
+                    Biodiversity monitoring and
+                    ecosystem assessment.
+                </p>
+
+            </article>
+
+
+            <article class="role">
+
+                <i data-lucide="fish"></i>
+
+                <h3>
+                    Aquaculture Specialist
+                </h3>
+
+                <p>
+                    Fish production, water quality,
+                    feeding and farm operations.
+                </p>
+
+            </article>
+
+
+            <article class="role">
+
+                <i data-lucide="database"></i>
+
+                <h3>
+                    Research Assistant
+                </h3>
+
+                <p>
+                    Field research, data collection,
+                    analysis and reporting.
+                </p>
+
+            </article>
+
+
+            <article class="role">
+
+                <i data-lucide="truck"></i>
+
+                <h3>
+                    Fleet Management Specialist
+                </h3>
+
+                <p>
+                    Fleet monitoring, asset tracking
+                    and operational reporting.
+                </p>
+
+            </article>
+
+
+            <article class="role">
+
+                <i data-lucide="radio-tower"></i>
+
+                <h3>
+                    GPS Tracking Officer
+                </h3>
+
+                <p>
+                    GPS monitoring, asset visibility
+                    and tracking systems.
+                </p>
+
+            </article>
+
+
+            <article class="role">
+
+                <i data-lucide="scan-line"></i>
+
+                <h3>
+                    Geofence Monitoring Officer
+                </h3>
+
+                <p>
+                    Geofence management, location
+                    monitoring and event analysis.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+
+<section id="contact"
+         class="page-section">
+
+    <div class="container section-inner">
+
+
+        <div class="section-header">
+
+            <div class="eyebrow">
+                Contact
+            </div>
+
+            <h2 class="section-title">
+                Let's work with science, data and technology.
+            </h2>
+
+            <p class="section-description">
+                Available for opportunities in data analytics,
+                environmental management, biodiversity, aquaculture,
+                GIS, fleet management and GPS tracking.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-links">
+
+
+                <a href="mailto:your-email@example.com"
+                   class="contact-link">
+
+                    <div class="contact-icon">
+
+                        <i data-lucide="mail"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>Email</small>
+
+                        <strong>
+                            your-email@example.com
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="tel:+255750502025"
+                   class="contact-link">
+
+                    <div class="contact-icon">
+
+                        <i data-lucide="phone"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>Phone</small>
+
+                        <strong>
+                            +255 XXX XXX XXX
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="#"
+                   class="contact-link">
+
+                    <div class="contact-icon">
+
+                        <i data-lucide="linkedin"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>LinkedIn</small>
+
+                        <strong>
+                            Professional Profile
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="#"
+                   class="contact-link">
+
+                    <div class="contact-icon">
+
+                        <i data-lucide="github"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>GitHub</small>
+
+                        <strong>
+                            Data & Technical Projects
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- FEEDBACK -->
+
+            <div class="feedback">
+
+                <h3>
+                    Send a message
+                </h3>
+
+                <p>
+                    Have a project, job opportunity or technical
+                    question? Send a message.
+                </p>
+
+
+                <form id="contactForm">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="your@email.com"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Your message..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        Send Message
+
+                        <i data-lucide="send"
+                           size="15"></i>
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="footer">
+
+    <div class="container footer-inner">
+
+        <div class="footer-copy">
+
+            © <span id="year"></span>
+            Emmanuel Kabinaga.
+            Aquatic • Environmental • Data • Fleet Intelligence.
+
+        </div>
+
+
+        <div class="socials">
+
+            <a href="#"
+               class="social">
+
+                <i data-lucide="linkedin"
+                   size="15"></i>
+
+            </a>
+
+
+            <a href="#"
+               class="social">
+
+                <i data-lucide="github"
+                   size="15"></i>
+
+            </a>
+
+
+            <a href="mailto:your-email@example.com"
+               class="social">
+
+                <i data-lucide="mail"
+                   size="15"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ============================================================
+     BACK TO TOP
+============================================================ -->
+
+<button id="backToTop"
+        aria-label="Back to top">
+
+    <i data-lucide="arrow-up"
+       size="20"></i>
+
+</button>
+
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script>
+
+
+    /* ==========================================================
+       INITIALIZE LUCIDE
+    ========================================================== */
+
+    lucide.createIcons();
+
+
+
+    /* ==========================================================
+       ELEMENTS
+    ========================================================== */
+
+    const sections =
+        document.querySelectorAll(".page-section");
+
+    const navButtons =
+        document.querySelectorAll(".nav-links button");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const backToTop =
+        document.getElementById("backToTop");
+
+
+
+    /* ==========================================================
+       SHOW ONLY ONE SECTION
+    ========================================================== */
+
+    function showSection(sectionId) {
+
+
+        /*
+           Hide every section.
+        */
+
+        sections.forEach(section => {
+
+            section.classList.remove("visible");
+
+        });
+
+
+        /*
+           Show selected section.
+        */
+
+        const selected =
+            document.getElementById(sectionId);
+
+        if (selected) {
+
+            selected.classList.add("visible");
+
+        }
+
+
+        /*
+           Update navigation state.
+        */
+
+        navButtons.forEach(button => {
+
+            button.classList.remove("active");
+
+            if (
+                button.dataset.section === sectionId
+            ) {
+
+                button.classList.add("active");
+
+            }
+
+        });
+
+
+        /*
+           Close mobile navigation.
+        */
+
+        navLinks.classList.remove("open");
+
+
+        /*
+           Scroll to page top.
+        */
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+
+        /*
+           Hide back-to-top button.
+        */
+
+        backToTop.classList.remove("show");
+
+
+        /*
+           Update URL hash.
+
+           This makes individual sections shareable.
+        */
+
+        history.replaceState(
+            null,
+            "",
+            "#" + sectionId
+        );
+
+    }
+
+
+
+    /* ==========================================================
+       NAVIGATION CLICK EVENTS
+    ========================================================== */
+
+    navButtons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                showSection(
+                    button.dataset.section
+                );
+
+            }
+        );
+
+    });
+
+
+
+    /* ==========================================================
+       MOBILE MENU
+    ========================================================== */
+
+    menuToggle.addEventListener(
+        "click",
+        () => {
+
+            navLinks.classList.toggle("open");
+
+        }
+    );
+
+
+
+    /* ==========================================================
+       BACK TO TOP
+    ========================================================== */
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            /*
+               Show button after user scrolls
+               down approximately 350px.
+            */
+
+            if (window.scrollY > 350) {
+
+                backToTop.classList.add("show");
+
+            } else {
+
+                backToTop.classList.remove("show");
+
+            }
+
+        }
+    );
+
+
+    backToTop.addEventListener(
+        "click",
+        () => {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
+
+
+
+    /* ==========================================================
+       CONTACT FORM
+    ========================================================== */
+
+    document
+        .getElementById("contactForm")
+        .addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("name").value;
+
+                alert(
+                    "Thank you " +
+                    name +
+                    ". Your message has been received."
+                );
+
+                this.reset();
+
+            }
+        );
+
+
+
+    /* ==========================================================
+       CURRENT YEAR
+    ========================================================== */
+
+    document.getElementById("year")
+        .textContent =
+        new Date().getFullYear();
+
+
+
+    /* ==========================================================
+       LOAD SECTION FROM URL
+       
+       Example:
+       yourwebsite.com/#education
+    ========================================================== */
+
+    const initialHash =
+        window.location.hash.replace("#", "");
+
+
+    if (
+        initialHash &&
+        document.getElementById(initialHash)
+    ) {
+
+        showSection(initialHash);
+
+    } else {
+
+        showSection("home");
+
+    }
+
+
+</script>
+
+
+</body>
+
+</html>
